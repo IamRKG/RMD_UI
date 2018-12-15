@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-patient-list',
@@ -149,17 +151,21 @@ export class PatientListComponent implements OnInit {
     "consent":""
   }]
 
-  constructor(){
-
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {}
 
   showPatientList(){
     return this.patient
   }
 
-  ngOnInit(){
-    console.log(this.showPatientList())
+  viewPatient(){
+    this.router.navigate(['/view']);
   }
 
+  ngOnInit(){
+    this.showPatientList();
+  }
 
 }

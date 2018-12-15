@@ -1,12 +1,9 @@
 
-<mat-list>
-  <mat-list-item>
-    <app-patient-search></app-patient-search>
-  </mat-list-item>
 
-</mat-list>
+    <app-patient-search></app-patient-search>
+
 <mat-list>
-  <mat-list-item matRipple *ngFor="let p of showPatientList()">
+  <mat-list-item (click)="viewPatient()" matRipple *ngFor="let p of showPatientList()">
     {{p.PatientID}}, {{p.PatientName}}, {{p.contactNo}}
     <mat-divider></mat-divider>
   </mat-list-item>
