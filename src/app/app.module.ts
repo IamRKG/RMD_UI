@@ -5,8 +5,30 @@ import { AppComponent } from './app.component';
 import {PatientProfileModule} from "./patient-profile/patient-profile.module";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatToolbarModule,MatButtonModule,MatGridListModule,MatIconModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule, Routes} from '@angular/router';
+import {PatientListComponent} from "./patient-profile/patient-list/patient-list.component";
+import {AddPatientComponent} from "./patient-profile/add-patient/add-patient.component";
+
+
+
+
+const appRoutes: Routes = [
+  {
+    path: 'add',
+    component: AddPatientComponent
+  },
+  {
+    path: 'patientList',
+    component: PatientListComponent
+  },
+  { path: '',
+    redirectTo: '/patientList',
+    pathMatch: 'full'
+  }
+];
+
 
 @NgModule({
   declarations: [
@@ -18,9 +40,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     BrowserModule,
     PatientProfileModule,
     MatToolbarModule,
-    MatFormFieldModule
-
-
+    MatButtonModule,
+    MatGridListModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

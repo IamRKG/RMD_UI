@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PatientListComponent } from './patient-list/patient-list.component';
-import {MatListModule} from '@angular/material/list';
-import {MatRippleModule} from '@angular/material/core';
-import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule, MatRippleModule, MatDividerModule, MatFormFieldModule, MatInputModule,MatCardModule,MatButtonModule} from '@angular/material';
 import { PatientSearchComponent } from './patient-search/patient-search.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { AddPatientComponent } from './add-patient/add-patient.component';
+import { ReactiveFormsModule } from '@angular/forms'
 
 
 @NgModule({
@@ -14,12 +14,17 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatListModule,
     MatRippleModule,
     MatDividerModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatButtonModule
 
   ],
   exports:[
     PatientListComponent
   ],
-  declarations: [PatientListComponent, PatientSearchComponent]
+  declarations: [PatientListComponent, PatientSearchComponent, AddPatientComponent]
 })
 export class PatientProfileModule {}
