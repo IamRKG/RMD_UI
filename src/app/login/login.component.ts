@@ -9,14 +9,14 @@ import { ActivatedRoute, Router} from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
+      private route: ActivatedRoute,
+      private router: Router,
   ) {}
 
   ngOnInit() {
   }
 
   login(){
-     this.router.navigate(['/login']);
+     this.router.navigate(['/patientList']);
   }
 }

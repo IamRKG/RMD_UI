@@ -1,7 +1,7 @@
 import {Component, OnInit, Output,EventEmitter} from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms'
 import {PatientAddService} from "../patientServices/patient-add.service";
-
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-patient',
@@ -9,19 +9,22 @@ import {PatientAddService} from "../patientServices/patient-add.service";
   styleUrls: ['./add-patient.component.css']
 })
 export class AddPatientComponent implements OnInit {
-  patient = [ ]
-
   @Output() addToList = new EventEmitter();
-  constructor(private  patientAddService:PatientAddService) { }
+  constructor(
+    private  patientAddService:PatientAddService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
     addProfileForm = new FormGroup({
+      patientID: new FormControl(''),
       patientName: new FormControl(''),
       age: new FormControl(''),
       sex: new FormControl(''),
       patientInTime: new FormControl(''),
       dob: new FormControl(''),
       bloodGroup: new FormControl(''),
-      mobileNumber: new FormControl(''),
+      contactNo: new FormControl(''),
       patientAddress: new FormControl(''),
       emailAddress: new FormControl(''),
       doctorsName: new FormControl(''),
@@ -47,9 +50,9 @@ export class AddPatientComponent implements OnInit {
     });
 
   addPatient(){
-    this.patient.push(this.addProfileForm.value);
-    return this.patient;
-    //this.patientAddService.getPatient(this.addProfileForm);
+    this.patientAddService.patients.push(this.addProfileForm.value);
+    console.log(this.addProfileForm.value)
+    this.router.navigate(['/patientList']);
   }
 
   ngOnInit() {

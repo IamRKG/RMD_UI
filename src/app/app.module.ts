@@ -22,6 +22,7 @@ import {AddPatientComponent} from "./patient-profile/add-patient/add-patient.com
 import {PatientAddService} from "./patient-profile/patientServices/patient-add.service"
 import {ViewPatientComponent} from "./patient-profile/view-patient/view-patient.component";
 import { LoginComponent } from './login/login.component';
+import {UserInformationService} from "./userServices/user-information.service";
 
 
 const appRoutes: Routes = [
@@ -45,6 +46,7 @@ const appRoutes: Routes = [
     redirectTo: 'patientList',
     pathMatch: 'full'
   }
+
 ];
 
 
@@ -69,7 +71,7 @@ const appRoutes: Routes = [
     MatInputModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [PatientAddService],
+  providers: [PatientAddService,UserInformationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
