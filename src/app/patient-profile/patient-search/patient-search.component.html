@@ -1,5 +1,7 @@
+<form [formGroup]="searchForm">
 <div class="search-container">
   <mat-form-field class="search">
-    <input matInput  placeholder="Search Patient">
+    <input matInput  placeholder="Search Patient" (click)="search()" formControlName="searchValue">
   </mat-form-field>
 </div>
+</form>

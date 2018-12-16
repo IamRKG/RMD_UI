@@ -106,8 +106,8 @@ export class PatientAddService {
     "amount":"1000",
     "consent":""
   },{
-    "PatientID":"0426",
-    "PatientName":"Sathish",
+    "patientID":"0426",
+    "patientName":"Sathish",
     "Age":"10/05/2001",
     "contactNo":"9774447523",
     "IPNo":"0152",
@@ -126,8 +126,8 @@ export class PatientAddService {
     "Amount":"2000",
     "consent":""
   },{
-    "PatientID":"0427",
-    "PatientName":"Sidhu",
+    "patientID":"0427",
+    "patientName":"Sidhu",
     "Age":"08/03/1995",
     "contactNo":"9734467823",
     "IPNo":"0153",

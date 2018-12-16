@@ -51,7 +51,6 @@ export class AddPatientComponent implements OnInit {
 
   addPatient(){
     this.patientAddService.patients.push(this.addProfileForm.value);
-    console.log(this.addProfileForm.value)
     this.router.navigate(['/patientList']);
   }
 
