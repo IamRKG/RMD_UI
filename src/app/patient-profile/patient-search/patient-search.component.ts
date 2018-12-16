@@ -18,11 +18,12 @@ export class PatientSearchComponent implements OnInit {
 
   search(){
     let searchResult = this.searchForm.value
-    this.patientAddService.patients.filter(function(searchResult) {
-      console.log(this.patientAddService.patients);
-      return this.patientAddService.patients;
+    let patients = this.patientAddService.patients.filter(function(searchResult) {
+      return searchResult.patientID == "0423";
 
     });
+    console.log(patients)
+
   }
   ngOnInit() {
 
