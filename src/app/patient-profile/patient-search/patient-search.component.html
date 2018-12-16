@@ -1,7 +1,7 @@
 <form [formGroup]="searchForm">
 <div class="search-container">
   <mat-form-field class="search">
-    <input matInput placeholder="Search Patient" (input)="search()" formControlName="searchValue">
+    <input matInput placeholder="Search Patient" type="search" (change)="search()" formControlName="searchValue">
   </mat-form-field>
 </div>
 </form>
