@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UpdatePatientSharedServiceService} from "../sharedServices/update-patient-shared-service.service";
+import {Patients} from "../patientInterface/patientsInterface";
+import {ActivatedRoute,Router} from "@angular/router"
 
 @Component({
   selector: 'app-view-patient',
@@ -7,33 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewPatientComponent implements OnInit {
 
-  patient = {
-    "PatientID":"0422",
-    "PatientName":"Ramu",
-    "Age":"12/12/1980",
-    "contactNo":"9584715311",
-    "IPNo":"0148",
-    "bloodGroup":"O Positive",
-    "address":"Velcahery,Chennai",
-    "emailAddress":"ramc90@gmail.com",
-    "doctorName":"Karthick",
-    "speciality":"Cardiology",
-    "PaitentClinicalHistory":"Alergic to Milk",
-    "treatmentsProcedures":"Admit to hospital",
-    "diagnosisProvisional":"Fever",
-    "Notes":"NA",
-    "treatment":"Tabltes",
-    "investigation":"Blood test",
-    "reviewAdvise":"Come after 5 days",
-    "Amount":"2000",
-    "consent":"NA"
-  }
-  constructor() { }
+  patient:Patients;
+
+  constructor(
+    private updatePatientSharedServiceService:UpdatePatientSharedServiceService,
+    private route:ActivatedRoute,
+    private router:Router
+  ) { }
+
+  showPatient(){
+    this.updatePatientSharedServiceService.getPatient().subscribe((response:Patients) => {
+      this.patient = response
+    })
+  };
+
+  edit(patient){
+    this.updatePatientSharedServiceService.selectedPatient = patient;
+    this.router.navigate(['/update'])
+  };
 
   ngOnInit() {
-
-   this.patient
-
+    this.showPatient();
   }
 
 }

@@ -1,3 +1,4 @@
+<!--<app-update-patient [patient]="patient"></app-update-patient>-->
 <div class="view-container">
 <mat-list>
   <mat-list-item>
@@ -6,15 +7,15 @@
 </mat-list>
   <mat-divider></mat-divider>
 <mat-list>
-  <mat-list-item > {{patient.PatientID}} </mat-list-item>
+  <mat-list-item > {{patient.patientID}} </mat-list-item>
 </mat-list>
 
 <mat-list>
-  <mat-list-item > {{patient.PatientName}} </mat-list-item>
+  <mat-list-item > {{patient.patientName}} </mat-list-item>
 </mat-list>
 
 <mat-list>
-  <mat-list-item > {{patient.Age}} </mat-list-item>
+  <mat-list-item > {{patient.age}} </mat-list-item>
 </mat-list>
 
 <mat-list>
@@ -34,7 +35,7 @@
 </mat-list>
 
 <mat-list>
-  <mat-list-item > {{patient.PaitentClinicalHistory}} </mat-list-item>
+  <mat-list-item > {{patient.paitentClinicalHistory}} </mat-list-item>
 </mat-list>
 
 <mat-list>
@@ -43,7 +44,7 @@
 
 
 <mat-list>
-  <mat-list-item > {{patient.Notes}} </mat-list-item>
+  <mat-list-item > {{patient.notes}} </mat-list-item>
 </mat-list>
 
 <mat-list>
@@ -59,7 +60,7 @@
 </mat-list>
 
 <mat-list>
-  <mat-list-item > {{patient.Amount}} </mat-list-item>
+  <mat-list-item > {{patient.amount}} </mat-list-item>
 </mat-list>
 
 <mat-list>
@@ -68,7 +69,7 @@
 
 <mat-list>
   <mat-list-item>
-    <button mat-raised-button color="primary">Edit</button>
+    <button mat-raised-button color="primary" (click)="edit(patient)">Edit</button>
   </mat-list-item>
 </mat-list>
 </div>
